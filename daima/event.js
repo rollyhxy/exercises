@@ -2,7 +2,7 @@ var event = {
 	fire: function (name) {
 		var arr = Array.prototype.slice.call(arguments,0);
 		arr.shift();
-		var events = this.events[name];
+		var events = this.events[name] || [];
 		events.forEach(function (callback,index,array){
 			callback.apply(null,arr)
 		})

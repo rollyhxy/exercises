@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title></title>
+	<style type="text/css">
+		p {
+			color: red;
+		}
+	</style>
+	<script src="../lib/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<div id='one'>如何在文章中发现这些敏感词，并将背景设置为红色或者改变字体颜色并标示出来。</div>
+	<script type="text/javascript">
+	/*
+		var str = "123abc456abc";
+		var replaceStr = "abc";
+		index = 3;
+		var qianmianStr = str.substring(0, index);
+		var houmianStr = str.substring(index + replaceStr.length);
+		str = qianmianStr + '<span style="background: red">' + replaceStr + '</span>' + houmianStr;
+
+		$('#one').html(str);
+*/
+		var fid = $('#one').text();
+		var a = fid.replace(/红色/g,`<p>红色<p/>`);
+		$('#one').html(a);
+		
+	</script>
+</body>
+</html>

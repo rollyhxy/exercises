@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		function num(item) {
+			var newi = item.toString();
+			var arr = [];
+			for(var i = newi.length-1; i >=0; i--) {
+				arr.push(newi[i])
+			}
+			var brr = arr.join('');
+			return brr;
+		}
+		function word(e) {
+			var newe = num(e);
+			if(e === newe) {
+				console.log('是回文')
+			}else {
+				console.log('不是回文')
+			}
+		}
+		word('abcba')
+
+
+// 写一个函数对传入的字符串输出所有子字符串组合
+// 方法 1
+	(function(){
+	  'use strict';
+	  function substrings(str) {
+	    if(typeof str !== 'string') {
+	      throw "Pls input a string!";
+	    }
+	    var result = [];
+	    function next(idx) {
+	      var i, n = str.length - idx;
+	      for(i=1; i<=n; i++) {
+	        add(str.substr(idx, i));
+	      }
+	      if(idx < str.length){
+	        next(idx+1);
+	      }
+	    }
+	    function add(item) {
+	      if(result.indexOf(item)<0) {
+	        result.push(item);
+	      }
+	    }
+	    next(0);
+	    return result;
+	  }
+	  
+	  console.log(substrings('dog'));
+	})();
+
+
+
+//方法 2
+	var str = 'cat';
+	for (var i = 0 ; i < str.length; i++) {
+		var tmp = ''
+		for (var j = i; j < str.length; j++) {
+			tmp += str[j];
+			console.log(tmp)
+		}
+	}
+
+	</script>
+</body>
+</html>

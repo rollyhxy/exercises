@@ -1,4 +1,13 @@
 try.md
 node_modules/
 ajax/myapp/node_modules/
+npm-debug.log
+node_modules
+*.swo
+*.iml
+.idea/
+.sass-cache/
+npm-debug.log
+*.sublime-workspace
+
 
